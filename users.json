@@ -1,9 +1,24 @@
 {
   "users": [
     {
+      "id": "2ady6d7idqw3",
+      "username": "john",
+      "name": "Hoàng Minh",
+      "email": "minh123@gmail.com",
+      "password": "123",
+      "gender": "male",
+      "role": "admin",
+      "division": "Hades",
+      "position": "CEO",
+      "phone": "0982718631",
+      "address": "44/75 nguyễn xiển thanh xuân hà nộii",
+      "love": "married",
+      "attendance": []
+    },
+    {
       "id": "2ady6d7ihb13",
       "username": "jane",
-      "name": "ádasd",
+      "name": "Thảo koi",
       "email": "thaokoi@gmail.com",
       "password": "123",
       "gender": "female",
@@ -15,6 +30,14 @@
       "love": "married",
       "attendance": [
         {
+          "id": "2bceb1bc-a51b-46ff-85d0-56ed320fazxczx",
+          "day": 23,
+          "month": 5,
+          "year": 2024,
+          "checkIn": "10:4:29",
+          "checkOut": ""
+        },
+        {
           "id": "2bceb1bc-a51b-46ff-85d0-56ed320fasdsa",
           "day": 24,
           "month": 5,
@@ -23,12 +46,20 @@
           "checkOut": "17:4:29"
         },
         {
-          "id": "2c9a7dfc-d240-4663-a6ae-8b281c1ad29f",
+          "id": "bab677e1-ced1-4d33-9f00-5e0d373388c5",
+          "day": 25,
+          "month": 5,
+          "year": 2024,
+          "checkIn": "",
+          "checkOut": ""
+        },
+        {
+          "id": "dd384ca3-8eb8-49ca-8f5a-2ece9a947d94",
           "day": 26,
           "month": 5,
           "year": 2024,
-          "checkIn": "12:28:32",
-          "checkOut": "12:28:35"
+          "checkIn": "22:34:41",
+          "checkOut": "22:34:55"
         }
       ]
     }
