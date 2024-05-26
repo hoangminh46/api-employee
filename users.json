@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "2ady6d7ihb13",
+      "username": "jane",
+      "name": "ádasd",
+      "email": "thaokoi@gmail.com",
+      "password": "123",
+      "gender": "female",
+      "role": "user",
+      "division": "Hades",
+      "position": "Tester",
+      "phone": "0982718725",
+      "address": "44/75 nguyễn xiển thanh xuân hà nộii",
+      "love": "married",
+      "attendance": [
+        {
+          "id": "2bceb1bc-a51b-46ff-85d0-56ed320fasdsa",
+          "day": 24,
+          "month": 5,
+          "year": 2024,
+          "checkIn": "11:4:29",
+          "checkOut": "17:4:29"
+        },
+        {
+          "id": "2c9a7dfc-d240-4663-a6ae-8b281c1ad29f",
+          "day": 26,
+          "month": 5,
+          "year": 2024,
+          "checkIn": "12:28:32",
+          "checkOut": "12:28:35"
+        }
+      ]
+    }
+  ]
+}
