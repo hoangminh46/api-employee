@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 const app = express();
 app.use(cors());
@@ -269,6 +270,52 @@ app.get("/protected", authenticateToken, (req, res) => {
   return res
     .status(200)
     .json({ message: "Truy cập thành công vào tài nguyên được bảo vệ" });
+});
+
+// Reset password via email
+app.post("/reset-password", (req, res) => {
+  const { email } = req.body;
+  const user = usersData.users.find((user) => user.email === email);
+
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  // Generate a new password
+  const newPassword = Math.random().toString(36).slice(2, 10);
+
+  // Update the user's password in the data structure
+  user.password = newPassword;
+
+  fs.writeFileSync("users.json", JSON.stringify(usersData, null, 4));
+
+  // Set up email transporter using the built-in nodemailer
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "hoangcongminh406@gmail.com", // Replace with your email
+      pass: "upks ydcl txhr ezno", // Replace with your email password
+    },
+  });
+
+  // Define email options
+  const mailOptions = {
+    from: "hoangcongminh406@gmail.com", // Replace with your email
+    to: user.email,
+    subject: "New Password",
+    text: `Your new password is: ${newPassword}`,
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).json({ error: "Failed to send email" });
+    } else {
+      console.log("Email sent: " + info.response);
+      return res.status(200).json({ message: "New password sent to email" });
+    }
+  });
 });
 
 // Khởi chạy server
