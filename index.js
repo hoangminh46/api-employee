@@ -194,6 +194,7 @@ app.post("/attendance", (req, res) => {
     year,
     checkIn,
     checkOut: "",
+    total: 0,
   };
 
   // Thêm dữ liệu attendance mới vào danh sách
@@ -222,6 +223,40 @@ app.put("/users/:userId/attendance/:attendanceId", (req, res) => {
   } else {
     res.status(404).json({ error: "Không tìm thấy người dùng trong dữ liệu" });
   }
+});
+
+// Thêm tổng thời gian làm việc trong ngày
+app.put("/users/:userId/attendance/:attendanceId/total", (req, res) => {
+  const { userId, attendanceId } = req.body;
+  const user = usersData.users.find((u) => u.id === userId);
+
+  const attendance = user.attendance.find((a) => a.id === attendanceId);
+
+  const [checkInHours, checkInMinutesTemp] = attendance.checkIn
+    .split(":")
+    .map(Number);
+  const [checkOutHours, checkOutMinutesTemp] = attendance.checkOut
+    .split(":")
+    .map(Number);
+
+  const checkInMinutes = checkInHours * 60 + checkInMinutesTemp;
+  const checkOutMinutes = checkOutHours * 60 + checkOutMinutesTemp;
+
+  let totalMinutes = checkOutMinutes - checkInMinutes;
+
+  // Trừ thêm 1:30 nếu checkOut lớn hơn hoặc bằng 13:30
+  if (
+    checkOutHours >= 13 &&
+    checkOutMinutes >= 30 &&
+    checkInHours <= 12 &&
+    checkOutMinutes == 0
+  ) {
+    totalMinutes -= 90; // 1:30 = 90 phút
+  }
+
+  attendance.total = totalMinutes;
+  fs.writeFileSync("users.json", JSON.stringify(usersData, null, 4));
+  res.json(attendance);
 });
 
 // Ví dụ về một tài nguyên cần xác thực token

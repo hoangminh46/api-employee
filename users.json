@@ -1,67 +1,170 @@
 {
-  "users": [
-    {
-      "id": "2ady6d7idqw3",
-      "username": "john",
-      "name": "Hoàng Minh",
-      "email": "minh123@gmail.com",
-      "password": "123",
-      "gender": "male",
-      "role": "admin",
-      "division": "Hades",
-      "position": "CEO",
-      "phone": "0982718631",
-      "address": "44/75 nguyễn xiển thanh xuân hà nộii",
-      "love": "married",
-      "attendance": []
-    },
-    {
-      "id": "2ady6d7ihb13",
-      "username": "jane",
-      "name": "Thảo koi",
-      "email": "thaokoi@gmail.com",
-      "password": "123",
-      "gender": "female",
-      "role": "user",
-      "division": "Hades",
-      "position": "Tester",
-      "phone": "0982718725",
-      "address": "44/75 nguyễn xiển thanh xuân hà nộii",
-      "love": "married",
-      "attendance": [
+    "users": [
         {
-          "id": "2bceb1bc-a51b-46ff-85d0-56ed320fazxczx",
-          "day": 23,
-          "month": 5,
-          "year": 2024,
-          "checkIn": "10:4:29",
-          "checkOut": ""
+            "id": "2ady6d7idqw3",
+            "username": "john",
+            "name": "Hoàng Minh",
+            "email": "minh123@gmail.com",
+            "password": "123",
+            "gender": "male",
+            "role": "admin",
+            "division": "Hades",
+            "position": "CEO",
+            "phone": "0866524731",
+            "address": "Đông khê, Ngô quyền, Hải Phòng",
+            "love": "married",
+            "attendance": []
         },
         {
-          "id": "2bceb1bc-a51b-46ff-85d0-56ed320fasdsa",
-          "day": 24,
-          "month": 5,
-          "year": 2024,
-          "checkIn": "11:4:29",
-          "checkOut": "17:4:29"
+            "id": "2ady6d7ihb13",
+            "username": "jane",
+            "name": "Nguyễn Thảo",
+            "email": "thaokoi@gmail.com",
+            "password": "123",
+            "gender": "female",
+            "role": "user",
+            "division": "Hades",
+            "position": "Tester",
+            "phone": "0982718725",
+            "address": "44/75 nguyễn xiển thanh xuân HN",
+            "love": "married",
+            "attendance": [
+                {
+                    "id": "37e41763-9c4a-47e3-961e-12a60e940dq2",
+                    "day": 21,
+                    "month": 5,
+                    "year": 2024,
+                    "checkIn": "7:54",
+                    "checkOut": "17:49",
+                    "total": 505
+                },
+                {
+                    "id": "37e41763-9c4a-47e3-961e-12a60e940412",
+                    "day": 22,
+                    "month": 5,
+                    "year": 2024,
+                    "checkIn": "",
+                    "checkOut": "",
+                    "total": 0
+                },
+                {
+                    "id": "37e41763-9c4a-47e3-961e-12a60e9404112",
+                    "day": 23,
+                    "month": 5,
+                    "year": 2024,
+                    "checkIn": "7:58",
+                    "checkOut": "17:33",
+                    "total": 485
+                },
+                {
+                    "id": "37e41763-9c4a-47e3-961e-12a60e940231",
+                    "day": 24,
+                    "month": 5,
+                    "year": 2024,
+                    "checkIn": "7:54",
+                    "checkOut": "17:49",
+                    "total": 505
+                },
+                {
+                    "id": "2933b2c5-b920-446e-b4a6-581cc4e28a86",
+                    "day": 27,
+                    "month": 5,
+                    "year": 2024,
+                    "checkIn": "12:59",
+                    "checkOut": "",
+                    "total": 0
+                }
+            ]
         },
         {
-          "id": "bab677e1-ced1-4d33-9f00-5e0d373388c5",
-          "day": 25,
-          "month": 5,
-          "year": 2024,
-          "checkIn": "",
-          "checkOut": ""
+            "id": "fc3fc139-e72f-4cb8-91b4-752cbdf8316a",
+            "email": "long123@gmail.com",
+            "name": "Nguyễn Long",
+            "username": "long",
+            "password": "123",
+            "role": "user",
+            "division": "Warrior",
+            "position": "Developer",
+            "phone": "0987627531",
+            "address": "282 Kim Giang Thanh Xuân HN",
+            "love": "married",
+            "gender": "male",
+            "attendance": []
         },
         {
-          "id": "dd384ca3-8eb8-49ca-8f5a-2ece9a947d94",
-          "day": 26,
-          "month": 5,
-          "year": 2024,
-          "checkIn": "22:34:41",
-          "checkOut": "22:34:55"
+            "id": "c34e9c86-40d0-4f7a-904c-4eb085aa2502",
+            "email": "nam123@gmail.com",
+            "name": "Phương Nam",
+            "username": "nam",
+            "password": "123",
+            "role": "user",
+            "division": "Hades",
+            "position": "Developer",
+            "phone": "",
+            "address": "",
+            "love": "",
+            "gender": "",
+            "attendance": []
+        },
+        {
+            "id": "2ad9599f-4b0c-4222-9740-172288664c59",
+            "email": "annhien@gmail.com",
+            "name": "An Nhiên",
+            "username": "nhien",
+            "password": "123",
+            "role": "user",
+            "division": "Faderless",
+            "position": "Tester",
+            "phone": "",
+            "address": "",
+            "love": "",
+            "gender": "",
+            "attendance": []
+        },
+        {
+            "id": "2ad9599f-4b0c-4222-9740-172288664c59",
+            "email": "tuanlong@gmail.com",
+            "name": "Tuấn Long",
+            "username": "tlong",
+            "password": "123",
+            "role": "user",
+            "division": "Phoenix",
+            "position": "Developer",
+            "phone": "",
+            "address": "",
+            "love": "",
+            "gender": "",
+            "attendance": []
+        },
+        {
+            "id": "2ad9599f-4b0c-4222-9740-172288664c59",
+            "email": "tung123@gmail.com",
+            "name": "Phạm Tùng",
+            "username": "tung",
+            "password": "123",
+            "role": "user",
+            "division": "Warrior",
+            "position": "Developer",
+            "phone": "",
+            "address": "",
+            "love": "",
+            "gender": "",
+            "attendance": []
+        },
+        {
+            "id": "2ad9599f-4b0c-4222-9740-172288664c59",
+            "email": "hai123@gmail.com",
+            "name": "Văn Hải",
+            "username": "hai",
+            "password": "123",
+            "role": "user",
+            "division": "Hades",
+            "position": "Tester",
+            "phone": "",
+            "address": "",
+            "love": "",
+            "gender": "",
+            "attendance": []
         }
-      ]
-    }
-  ]
+    ]
 }
