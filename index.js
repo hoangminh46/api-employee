@@ -278,7 +278,9 @@ app.post("/reset-password", (req, res) => {
   const user = usersData.users.find((user) => user.email === email);
 
   if (!user) {
-    return res.status(404).json({ error: "User not found" });
+    return res
+      .status(404)
+      .json({ type: 1, message: "Không tìm thấy người dùng" });
   }
 
   // Generate a new password
@@ -293,14 +295,14 @@ app.post("/reset-password", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "hoangcongminh406@gmail.com", // Replace with your email
-      pass: "upks ydcl txhr ezno", // Replace with your email password
+      user: "hoangcongminh406@gmail.com",
+      pass: "upks ydcl txhr ezno",
     },
   });
 
   // Define email options
   const mailOptions = {
-    from: "hoangcongminh406@gmail.com", // Replace with your email
+    from: "hoangcongminh406@gmail.com",
     to: user.email,
     subject: "New Password",
     text: `Your new password is: ${newPassword}`,
@@ -309,11 +311,12 @@ app.post("/reset-password", (req, res) => {
   // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
-      return res.status(500).json({ error: "Failed to send email" });
+      return res.status(500).json({ error: "Đặt lại mật khẩu thất bại" });
     } else {
-      console.log("Email sent: " + info.response);
-      return res.status(200).json({ message: "New password sent to email" });
+      return res.status(200).json({
+        type: 2,
+        message: "Mật khẩu mới đã được gửi tới email của bạn!!!",
+      });
     }
   });
 });
