@@ -240,21 +240,34 @@ app.put("/users/:userId/attendance/:attendanceId/total", (req, res) => {
     .split(":")
     .map(Number);
 
-  const checkInMinutes = checkInHours * 60 + checkInMinutesTemp;
-  const checkOutMinutes = checkOutHours * 60 + checkOutMinutesTemp;
+  let checkInMinutes = checkInHours * 60 + checkInMinutesTemp;
+  let checkOutMinutes = checkOutHours * 60 + checkOutMinutesTemp;
 
   let totalMinutes = checkOutMinutes - checkInMinutes;
-
-  // Trừ thêm 1:30 nếu checkOut lớn hơn hoặc bằng 13:30
-  if (
-    checkOutHours >= 13 &&
-    checkOutMinutes >= 30 &&
-    checkInHours <= 12 &&
-    checkOutMinutes == 0
-  ) {
-    totalMinutes -= 90; // 1:30 = 90 phút
+  if (totalMinutes >= 570) {
+    totalMinutes = 480;
+  } else if (checkInMinutes >= 720 && checkInMinutes <= 810) {
+    checkInMinutes = 810;
+    if (checkOutMinutes >= 1050) {
+      checkOutMinutes = 1050;
+    }
+    totalMinutes = checkOutMinutes - checkInMinutes;
+  } else if (checkInMinutes == 810 && checkOutMinutes >= 1050) {
+    checkOutMinutes = 1050;
+    totalMinutes = checkOutMinutes - checkInMinutes;
+  } else if (checkInMinutes <= 480 && checkOutMinutes <= 720) {
+    checkInMinutes = 480;
+    totalMinutes = checkOutMinutes - checkInMinutes;
+  } else if (checkInMinutes >= 480 && checkOutMinutes <= 720) {
+    totalMinutes = checkOutMinutes - checkInMinutes;
+  } else if (checkInMinutes >= 810 && checkOutMinutes <= 1050) {
+    totalMinutes = checkOutMinutes - checkInMinutes;
+  } else if (checkInMinutes >= 810 && checkOutMinutes >= 1050) {
+    checkOutMinutes = 1050;
+    totalMinutes = checkOutMinutes - checkInMinutes;
+  } else {
+    totalMinutes -= 90;
   }
-
   attendance.total = totalMinutes;
   fs.writeFileSync("users.json", JSON.stringify(usersData, null, 4));
   res.json(attendance);

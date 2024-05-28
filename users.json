@@ -36,7 +36,7 @@
           "year": 2024,
           "checkIn": "7:54",
           "checkOut": "17:49",
-          "total": 505
+          "total": 480
         },
         {
           "id": "37e41763-9c4a-47e3-961e-12a60e940412",
@@ -54,7 +54,7 @@
           "year": 2024,
           "checkIn": "7:58",
           "checkOut": "17:33",
-          "total": 485
+          "total": 480
         },
         {
           "id": "37e41763-9c4a-47e3-961e-12a60e940231",
@@ -63,14 +63,23 @@
           "year": 2024,
           "checkIn": "7:54",
           "checkOut": "17:49",
-          "total": 505
+          "total": 480
         },
         {
           "id": "2933b2c5-b920-446e-b4a6-581cc4e28a86",
           "day": 27,
           "month": 5,
           "year": 2024,
-          "checkIn": "12:59",
+          "checkIn": "7:51",
+          "checkOut": "17:37",
+          "total": 480
+        },
+        {
+          "id": "2933b2c5-b920-446e-b4a6-581cc4e28azxc",
+          "day": 28,
+          "month": 5,
+          "year": 2024,
+          "checkIn": "7:40",
           "checkOut": "",
           "total": 0
         }
