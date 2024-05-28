@@ -246,6 +246,8 @@ app.put("/users/:userId/attendance/:attendanceId/total", (req, res) => {
   let totalMinutes = checkOutMinutes - checkInMinutes;
   if (totalMinutes >= 570) {
     totalMinutes = 480;
+  } else if (checkInMinutes >= 1050) {
+    totalMinutes = 0;
   } else if (checkInMinutes >= 720 && checkInMinutes <= 810) {
     checkInMinutes = 810;
     if (checkOutMinutes >= 1050) {
