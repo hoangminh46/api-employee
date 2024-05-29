@@ -63,11 +63,23 @@ app.post("/users", (req, res) => {
   const existingUser = usersData.users.find(
     (user) => user.username === newUser.username
   );
+
+  const existingEmail = usersData.users.find(
+    (user) => user.email === newUser.email
+  );
+
   if (existingUser) {
     return res.status(409).json({
       message: {
         type: 1,
         text: "Tên đăng nhập đã tồn tại",
+      },
+    });
+  } else if (existingEmail) {
+    return res.status(409).json({
+      message: {
+        type: 1,
+        text: "Email đã tồn tại",
       },
     });
   }
